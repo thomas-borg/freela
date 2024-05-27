@@ -39,9 +39,13 @@ end
 10.times do
   the_user = User.all.sample
   the_project = Project.all.sample
+  while the_user == the_project.user
+    the_user = User.all.sample
+    the_project = Project.all.sample
+  end
   collab = Collaboration.create!(user: the_user, project: the_project)
   collab.save
-  puts "New collab create"
+  puts "New collab create: #{the_user.email} join #{the_project.user.email} project "
 end
 
 puts "Finished!"
