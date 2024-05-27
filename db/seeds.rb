@@ -7,3 +7,48 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Destroying All Collaboration"
+Collaboration.destroy_all
+
+puts "Destroying All project"
+Project.destroy_all
+
+puts "Destroying All User"
+User.destroy_all
+
+puts "Seeding start"
+puts "Creating users"
+20.times do
+  user = User.create!(email: Faker::Internet.email, password: Faker::Internet.password)
+  user.save
+  puts "#{user.email} create"
+end
+
+puts "Creating projects"
+20.times do
+  the_user = User.all.sample
+  project = Project.create!(name: Faker::Sports::Chess.opening,
+                          skills: Faker::IndustrySegments.industry,
+                          description: Faker::Hipster.sentence,
+                          user: the_user)
+  project.save
+  puts "#{project.name} create"
+end
+
+10.times do
+  the_user = User.all.sample
+  the_project = Project.all.sample
+  collab = Collaboration.create!(user: the_user, project: the_project)
+  collab.save
+  puts "New collab create"
+end
+
+puts "Finished!"
+
+# puts "creating project"
+# proj = Project.create(name: "test", skills: "exem exma epr", description: "whatever", user: util)
+
+# puts "creating colab"
+# colab = Collaboration.create(user: util, project: proj)
+# colab.save
