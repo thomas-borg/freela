@@ -1,0 +1,15 @@
+<div class="container pt-3">
+  <div class="card-body">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <h2><%= @project.name %></h2>
+    <h5 class="card-title"><%= @project.user.email %></h5>
+    <p class="card-text"><%= @project.description %></p>
+    <p class="card-text"><%= @project.skills %></p>
+    <a href="#" class="btn btn-primary">Sign Up</a>
+  </div>
+
+  <!--
+  1. Need to convert skills to an array in project model
+  2. Implement an iterator to add skills to a skill div
+  -->
+<div>
