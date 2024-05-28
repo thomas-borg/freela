@@ -1,0 +1,24 @@
+<h1 style="text-align: center;">Find Projects<h1>
+  <div class="container d-flex">
+    <div class="d-flex justify-content-center flex-wrap">
+      <% @projects.each do |project| %>
+        <%= link_to project_path(project.id) do %>
+          <div class="border border-dark m-2 p-2" style="text-align: center;">
+            <h3><%= project.name %></h3>
+            <h5><%= project.skills %></h5>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+<!-- Styled version using Le Wagon UI Kit Card Grid and Card Category
+  <div class="cards">
+    <% @projects.each do |project| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= project.name %>
+        <%= project.skills %>
+      </div>
+    <% end %>
+  </div>
+-->
