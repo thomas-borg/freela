@@ -9,21 +9,22 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    # @project = Project.new
+    @project = Project.new
   end
 
   def create
-    # @project = Project.new(project_params)
-    # @project.user_id = params[:user_id]
-    # @project.save!
-    # # if @project.save
-    #   # redirect_to dashboard path
-    # # else
-    #   # render :new, status: :unprocessable_entity
-    # # end
+    @project = Project.new(project_params)
+    @project.user = current_user
+    @project.save!
+    if @project.save
+      redirect_to dashboard_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
+
   def set_project
     @project = Project.find(params[:id])
   end
@@ -31,5 +32,4 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:name, :skills, :description, :start_date, :end_date, :user_id)
   end
-
 end
