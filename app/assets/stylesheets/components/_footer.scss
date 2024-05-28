@@ -3,6 +3,13 @@
 //   font-family: Open Sans;
 // }
 
+.content{
+  min-height: 54vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .footer-distributed{
   background: #212529;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -10,6 +17,8 @@
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
+
+  min-height: 100px; //for footer to be at the end
 }
 
 .footer-distributed .footer-left,
