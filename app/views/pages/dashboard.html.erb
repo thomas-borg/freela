@@ -1,0 +1,15 @@
+<h1>Dashboard</h1>
+
+<h2>----Project</h2>
+<% @projects.each do |project| %>
+  <h4> <%= project.name %> </h4>
+  <h3> <%= project.description %> </h3>
+  <h3> <%= project.skills %> </h3>
+<% end %>
+
+<h2>----Collaboration</h2>
+<% @collaborations.each do |collab| %>
+  <h4> <%= collab.project.name %> </h4>
+  <h3> <%= collab.project.description %> </h3>
+  <h3> <%= collab.project.skills %> </h3>
+<% end %>
