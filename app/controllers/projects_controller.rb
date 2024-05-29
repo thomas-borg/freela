@@ -4,6 +4,15 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    if params[:query].present?
+      # sql_subquery = <<~SQL
+      #   projects.name @@ :query
+      #   OR projects.skill @@ :query
+      #   OR projects.description @@ :query
+      # SQL
+      # @projects = @projects.where(sql_subquery, query: params[:query])
+      @projects = Project.global_search(params[:query])
+    end
   end
 
   def show
