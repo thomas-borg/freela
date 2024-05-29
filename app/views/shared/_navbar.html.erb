@@ -19,14 +19,21 @@
             <a class="nav-link text-decoration-none" href="/projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-decoration-none" href="/dashboard">Profile
-            <i class="fa-regular fa-user"></i>
-            </a>
+            <% if user_signed_in? %>
+              <a class="nav-link text-decoration-none" href="/dashboard">Profile
+              <i class="fa-regular fa-user"></i>
+              </a>
+            <% end %>
           </li>
           </ul>
           <nav class="nav-item">
-            <a class="nav-link text-decoration-none"> <%= link_to 'Log Out ', destroy_user_session_path, method: :delete, data: { turbo_method: 'delete' }, class: 'out-button' %>
-            </a>
+            <% unless current_page?(new_user_session_path) %>
+              <% if user_signed_in? %>
+                  <a class="nav-link text-decoration-none"> <%= link_to 'Log Out ', destroy_user_session_path, method: :delete, data: { turbo_method: 'delete' }, class: 'out-button' %> </a>
+              <% else %>
+                <a a class="nav-link text-decoration-none"> <%= link_to 'Login ', new_user_session_path, class: 'enter-button' %>
+              <% end %>
+            <% end %>
           </nav>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Find a project!" aria-label="Search">
