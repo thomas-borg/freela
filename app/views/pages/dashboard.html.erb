@@ -1,11 +1,19 @@
 <h1>Dashboard</h1>
 
 <h2>----Project</h2>
-<% @projects.each do |project| %>
-  <h4> <%= project.name %> </h4>
-  <h3> <%= project.description %> </h3>
-  <h3> <%= project.skills %> </h3>
-<% end %>
+<div class="container">
+  <div class="row d-flex justify-content-start">
+    <% @projects.each_with_index do |project, index| %>
+      <div class="col-lg-3 d-flex flex-column pt-3">
+        <%= image_tag "https://source.unsplash.com/random/?#{index}", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140" %>
+        <h3><%= project.name %></h3>
+        <p class="details"><%= project.description %></p>
+        <h4><%= project.skills %></h4>
+        <p><a class="btn btn-secondary align-self-baseline" href="#" role="button" id="fbtn">View details »</a></p>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <h2>----Collaboration</h2>
 <% @collaborations.each do |collab| %>
