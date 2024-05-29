@@ -4,7 +4,7 @@
     <p>Browse through interesting start-up ideas, find a match and collaborate!</p>
     <div class="col-sm-10">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for a project by category" aria-label="Search bar" aria-describedby="button-addon2">
+        <input type="text" class="form-control" placeholder="Search for a project" aria-label="Search bar" aria-describedby="button-addon2">
         <button class="btn btn-primary btn-lg" type="button" id="button-addon2">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -14,22 +14,23 @@
 </div>
 
 <div class="row">
+  <h2 class="subtitle">Popular projects</h2>
   <div class="col-lg-4 d-flex flex-column">
-    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-    <h2>Heading</h2>
-    <p class="details">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+    <%= image_tag "running.jpg", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140"%>
+    <h3>VerSe</h3>
+    <p class="details">Start-up app for young internationals to find a sports buddy around Amsterdam. We are currently seeking for an UX/UI designer for a rebranding on our website.</p>
     <p><a class="btn btn-secondary align-self-baseline" href="#" role="button" id="fbtn">View details »</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4 d-flex flex-column">
-    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-    <h2>Heading</h2>
-    <p class="details">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+    <%= image_tag "coffee.jpg", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140"%>
+    <h3>Coffee & Code</h3>
+    <p class="details">A platform where you can find freelance hospitality workers for your cafe or restaurant. We are looking for a developer to partner up on our start-up and maintain the daily operations within the website.</p>
     <p><a class="btn btn-secondary align-self-end" href="#" role="button">View details »</a></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4 d-flex flex-column">
-    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-    <h2>Heading</h2>
-    <p class="details">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <%= image_tag "tractor.jpg", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140"%>
+    <h3>HappyTractor</h3>
+    <p class="details">We sell second hand parts for your tractor or agricultural machines. We are currently looking for a developer to setup our online store. </p>
     <p><a class="btn btn-secondary align-self-end" href="#" role="button">View details »</a></p>
   </div><!-- /.col-lg-4 -->
 </div><!-- /.row -->
@@ -38,11 +39,11 @@
 
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Start-ups:<span class="text-muted"> Stick to your budget</span></h2>
+      <p class="lead">Find the right service for every price point. No hourly rates, just project-based pricing. Don't have a lot of room for budget? Offer a partnership or profit shareholding instead! Developers might be looking for cool projects to contribute in exchange for market experience and practice.</p>
     </div>
     <div class="col-md-5">
-      <%= image_tag "content-pixie-0z7dmskP70E-unsplash.jpg", alt: "Movie icon",  class:"featurette-image img-fluid mx-auto" %>
+      <%= image_tag "content-pixie-0z7dmskP70E-unsplash.jpg", alt: "Movie icon",  class:"featurette-image img-fluid mx-auto object-fit-contain" %>
     </div>
   </div>
 
@@ -50,11 +51,11 @@
 
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Developers: <span class="text-muted"> Finds what is interesting for you</span></h2>
+      <p class="lead">Find project ideas that you find interesting and you would like to collaborate. Found something you like? Apply! Perhaps the next million-dollar idea is sitting right in front of you!</p>
     </div>
     <div class="col-md-5 order-md-1" class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500">
-      <%= image_tag "toa-heftiba-kRwu0xbHBlA-unsplash.jpg", alt: "Movie icon",  class:"featurette-image img-fluid mx-auto" %>
+      <%= image_tag "toa-heftiba-kRwu0xbHBlA-unsplash.jpg", alt: "Movie icon",  class:"featurette-image img-fluid mx-auto object-fit-contain" %>
     </div>
   </div>
 
@@ -62,11 +63,11 @@
 
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      <h2 class="featurette-heading">Is it a match? <span class="text-muted">Let's start working!</span></h2>
+      <p class="lead">Once a developer applies to collaborate on a project, the start-up founder can review their profile and accept (or not) their application. Once an application is accepted, then it is time to discuss further details and get to work!</p>
     </div>
     <div class="col-md-5">
-      <%= image_tag "zan-lazarevic-AmEeEB1g3XQ-unsplash.jpg", alt: "Movie icon", class:"featurette-image img-fluid mx-auto" %>
+      <%= image_tag "zan-lazarevic-AmEeEB1g3XQ-unsplash.jpg", alt: "Movie icon", class:"featurette-image img-fluid mx-auto object-fit-contain" %>
   </div>
 
   <hr class="featurette-divider">
