@@ -5,9 +5,16 @@
     <h5 class="card-title"><%= @project.user.email %></h5>
     <p class="card-text"><%= @project.description %></p>
     <p class="card-text"><%= @project.skills %></p>
-    <a href="#" class="btn btn-primary">Sign Up</a>
+    <!-- <a href="#" class="btn btn-primary">Sign Up</a>-->
   </div>
 
+  <% if @project.user != current_user %>
+    <div>
+      <%= simple_form_for [@project, @collaboration] do |f| %>
+        <%= f.submit "Book", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
   <!--
   1. Need to convert skills to an array in project model
   2. Implement an iterator to add skills to a skill div

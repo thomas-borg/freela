@@ -6,6 +6,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    if current_user
+      @collaboration = Collaboration.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def new
