@@ -8,12 +8,13 @@
     <!-- <a href="#" class="btn btn-primary">Sign Up</a>-->
   </div>
 
-  <div>
-    <%= simple_form_for [@project, @collaboration] do |f| %>
-      <%= f.submit "Book", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-
+  <% if @project.user != current_user %>
+    <div>
+      <%= simple_form_for [@project, @collaboration] do |f| %>
+        <%= f.submit "Book", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
   <!--
   1. Need to convert skills to an array in project model
   2. Implement an iterator to add skills to a skill div
