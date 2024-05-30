@@ -2,7 +2,7 @@
   <nav class="navbar-lewagon navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">FREELA
-      <%= image_tag("Freelaaa.png",  :alt => "logos", :class => "logos") %>
+      <%= image_tag("Freela.png",  :alt => "logos", :class => "logos-navbar") %>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,32 +13,33 @@
             <a class="nav-link text-decoration-none" aria-current="page"  href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-decoration-none" aria-current="page" href="/projects/new">Create</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-decoration-none" href="/projects">Projects</a>
-          </li>
-          <li class="nav-item">
             <% if user_signed_in? %>
-              <a class="nav-link text-decoration-none" href="/dashboard">Profile
-              <i class="fa-regular fa-user"></i>
-              </a>
+              <a class="nav-link text-decoration-none" aria-current="page" href="/projects/new">Create a Project</a>
             <% end %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-decoration-none" href="/projects">Browse Projects</a>
           </li>
           </ul>
           <nav class="nav-item">
-            <% unless current_page?(new_user_session_path) %>
-              <% if user_signed_in? %>
-                  <a class="nav-link text-decoration-none"> <%= link_to 'Log Out ', destroy_user_session_path, method: :delete, data: { turbo_method: 'delete' }, class: 'out-button' %> </a>
-              <% else %>
-                <a a class="nav-link text-decoration-none"> <%= link_to 'Login ', new_user_session_path, class: 'enter-button' %>
-              <% end %>
+            <% if user_signed_in? %>
+              <a class="nav-link " href="/dashboard"><%= image_tag("user-52.png",  :alt => "logos", :class => "logos-profile") %>
+              </a>
             <% end %>
           </nav>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Find a project!" aria-label="Search">
-          <button class="btn btn-light " type="submit">Search</button>
-        </form>
+          <nav class="nav-item">
+            <% unless current_page?(new_user_session_path) %>
+              <% if user_signed_in? %>
+                  <a class="nav-link "> <%= link_to image_tag("logout-icon.png", :alt => "log-outs", class: 'out-button'), destroy_user_session_path, method: :delete, data: { turbo_method: 'delete' } %> </a>
+              <% else %>
+                <a a class="nav-link"> <%= link_to "Login", href="/users/sign_in", class: "nav-link-login" %>
+              <% end %>
+            <% end %>
+            <% if current_page?(new_user_session_path) %>
+              <a a class="nav-link text-decoration-none"> <%= link_to "Sign Up", "/users/sign_up", class: "nav-link-sign-up" %>
+              </a>
+            <% end %>
+          </nav>
       </div>
     </div>
   </nav>
