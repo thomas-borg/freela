@@ -1,22 +1,17 @@
-<h1>Dashboard</h1>
-<h2>----Project</h2>
-<div class="container">
-  <div class="row d-flex justify-content-start">
-    <% @projects.each_with_index do |project, index| %>
-      <div class="col-lg-3 d-flex flex-column pt-3">
-        <%= image_tag "https://source.unsplash.com/random/?#{index}", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140" %>
-        <h3><%= project.name %></h3>
-        <p class="details"><%= project.description %></p>
-        <h4><%= project.skill %></h4>
-        <p><a class="btn btn-secondary align-self-baseline" href="" role="button" id="fbtn">View details »</a></p>
-      </div>
+<div class="container py-3">
+  <h1>Dashboard</h1>
+  <h2>My Projects</h2>
+  <div class="row">
+    <% @projects.each do |project| %>
+      <%= render "components/card_large", project: project %>
     <% end %>
   </div>
 </div>
 
-<h2>----Collaboration</h2>
-<% @collaborations.each do |collab| %>
-  <h4> <%= collab.project.name %> </h4>
-  <h3> <%= collab.project.description %> </h3>
-  <h3> <%= collab.project.skill %> </h3>
-<% end %>
+  <h2>----Collaboration</h2>
+  <% @collaborations.each do |collab| %>
+    <h4> <%= collab.project.name %> </h4>
+    <h3> <%= collab.project.description %> </h3>
+    <h3> <%= collab.project.skill %> </h3>
+  <% end %>
+</div>
