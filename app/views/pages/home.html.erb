@@ -13,27 +13,15 @@
   </div>
 </div>
 
-<div class="row">
-  <h2 class="subtitle">Popular projects</h2>
-  <div class="col-lg-4 d-flex flex-column">
-    <%= image_tag "running.jpg", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140"%>
-    <h3>VerSe</h3>
-    <p class="details">Start-up app for young internationals to find a sports buddy around Amsterdam. We are currently seeking for an UX/UI designer for a rebranding on our website.</p>
-    <p><a class="btn btn-secondary align-self-baseline" href="#" role="button" id="fbtn">View details »</a></p>
-  </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4 d-flex flex-column">
-    <%= image_tag "coffee.jpg", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140"%>
-    <h3>Coffee & Code</h3>
-    <p class="details">A platform where you can find freelance hospitality workers for your cafe or restaurant. We are looking for a developer to partner up on our start-up and maintain the daily operations within the website.</p>
-    <p><a class="btn btn-secondary align-self-end" href="#" role="button">View details »</a></p>
-  </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4 d-flex flex-column">
-    <%= image_tag "tractor.jpg", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140"%>
-    <h3>HappyTractor</h3>
-    <p class="details">We sell second hand parts for your tractor or agricultural machines. We are currently looking for a developer to setup our online store. </p>
-    <p><a class="btn btn-secondary align-self-end" href="#" role="button">View details »</a></p>
-  </div><!-- /.col-lg-4 -->
-</div><!-- /.row -->
+<div class="container">
+  <div class="row">
+    <h2 class="subtitle">Popular projects</h2>
+    <% @projects.each do |project|  %>
+      <%= render "components/card_large", project: project %>
+    <% end %>
+  </div>
+</div>
+
 
   <hr class="featurette-divider">
 
