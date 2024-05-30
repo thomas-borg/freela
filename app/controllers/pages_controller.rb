@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!
 
   def home
+    @projects = Project.order(created_at: :desc).limit(3)
   end
 
   def dashboard

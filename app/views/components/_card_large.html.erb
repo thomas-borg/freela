@@ -1,0 +1,6 @@
+<div class="large-cards col-lg-4 d-flex flex-column">
+  <%= image_tag "running.jpg", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140"%>
+  <h3><%= project.name %></h3>
+  <p class="details"><%= project.description %></p>
+  <p><a class="btn btn-secondary align-self-baseline" href="/projects/<%= project.id %>" role="button" id="fbtn">View details »</a></p>
+</div>

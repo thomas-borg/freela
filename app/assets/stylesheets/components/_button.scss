@@ -12,6 +12,19 @@
 
 .enter-button{
   margin: 10px;
-  text-decoration: none;
   color: #FFFFFF8C;
+}
+
+.btn {
+  background-color: #EB3565;
+  border-color: #EB3565;
+  color: white;
+  font-weight: 600;
+
+
+  &:hover {
+    background-color: #484747;
+    border-color: #484747;
+    transition: 0.3s ease;
+  }
 }
