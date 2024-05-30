@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container py-5">
   <%= simple_form_for(@project) do |f| %>
     <%= f.input :name %>
-    <%= f.input :skill %>
     <%= f.input :description %>
+    <%= f.input :skill, collection: @skills, label: "I'm looking for a..", prompt: 'Choose one' %>
     <%= f.submit %>
   <% end %>
   <%= link_to "Back to home", root_path  %>
