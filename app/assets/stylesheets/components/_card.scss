@@ -1,10 +1,55 @@
-.card{
+.card-projects {
   width: 300px;
-  height: 200px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 1px -1px 2px black
 }
 
-.container {
+.container-projects {
   margin-top: 3px;
-  display: flex;
 
+}
+
+.text-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: inherit;
+}
+
+.avatar-images {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.image-project {
+  width: 100%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.image-user {
+  border-radius: 50%;
+}
+
+.detilskill {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectinfo {
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.userinfo {
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.projectitle {
+  font-size: 15px;
+  text-decoration: none;
 }
