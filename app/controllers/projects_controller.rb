@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show]
-  before_action :set_skills, only: [:new,]
+  before_action :set_skills, only: [:new, :create]
 
   def index
     @projects = Project.all
@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @skills = ['Front-End Development', 'Back-End Development', 'Full Stack Development', 'UX/UI Design', 'Graphic Design']
   end
 
   def create
@@ -40,6 +39,6 @@ class ProjectsController < ApplicationController
   end
 
   def set_skills
-    @skills = ['Front-End Development', 'Back-End Development', 'Full Stack Development', 'UX/UI Design', 'Graphic Design']
+    @skills = ['Front-End Developer', 'Back-End Developer', 'Full Stack Developer', 'UX/UI Designer', 'Graphic Designer']
   end
 end
