@@ -1,3 +1,16 @@
+<!-- Styled version using Le Wagon UI Kit Card Grid and Card Category
+  <div class="cards">
+    <% @projects.each do |project| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= project.name %>
+        <%= project.skills %>
+      </div>
+    <% end %>
+  </div>
+-->
+
+
+<!-- Version 2
 <h1 style="text-align: center;">Find Projects<h1>
   <div class="container d-flex">
     <div class="d-flex justify-content-center flex-wrap">
@@ -23,15 +36,20 @@
       <% end %>
     </div>
   </div>
-
-
-<!-- Styled version using Le Wagon UI Kit Card Grid and Card Category
-  <div class="cards">
-    <% @projects.each do |project| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        <%= project.name %>
-        <%= project.skill %>
-      </div>
-    <% end %>
-  </div>
 -->
+  </div>
+  <%end %>
+</div>
+-->
+<div class="row">
+  <% @projects.each_with_index do |project, index| %>
+    <div class="card-product col-lg-5 m-3 flex-grow-1 rounded-5">
+      <%= image_tag "https://source.unsplash.com/random?sig=#{index}", alt: "Movie icon", style: "width: 25%; height: 100%;" %>
+      <div class="card-product-infos">
+        <span class=" text-black fw-bold"><%= project.name %></span>
+        <span class="user-name"><%= project.user.email %></span>
+        <p><%= project.skills %></p>
+      </div>
+    </div>
+  <%end %>
+</div>
