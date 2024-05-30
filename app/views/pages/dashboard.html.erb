@@ -7,7 +7,7 @@
         <%= image_tag "https://source.unsplash.com/random/?#{index}", alt: "Movie icon", class:"rounded-circle", width:"140", height:"140" %>
         <h3><%= project.name %></h3>
         <p class="details"><%= project.description %></p>
-        <h4><%= project.skills %></h4>
+        <h4><%= project.skill %></h4>
         <p><a class="btn btn-secondary align-self-baseline" href="" role="button" id="fbtn">View details »</a></p>
       </div>
     <% end %>
@@ -18,5 +18,5 @@
 <% @collaborations.each do |collab| %>
   <h4> <%= collab.project.name %> </h4>
   <h3> <%= collab.project.description %> </h3>
-  <h3> <%= collab.project.skills %> </h3>
+  <h3> <%= collab.project.skill %> </h3>
 <% end %>
