@@ -15,7 +15,7 @@
               </div>
               <div class="detilskill">
                 <h5 class="projectinfo"><%= project.description %></h5>
-                <h5 class="projectinfo"><%= project.skills %></h5>
+                <h5 class="projectinfo"><%= project.skill %></h5>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
     <% @projects.each do |project| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
         <%= project.name %>
-        <%= project.skills %>
+        <%= project.skill %>
       </div>
     <% end %>
   </div>

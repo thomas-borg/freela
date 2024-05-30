@@ -29,7 +29,7 @@ puts "Creating projects"
 20.times do
   the_user = User.all.sample
   project = Project.create!(name: Faker::Sports::Chess.opening,
-                          skills: Faker::IndustrySegments.industry,
+                          skill: ['Front-End Developer', 'Back-End Developer', 'Full Stack Developer', 'UX/UI Designer', 'Graphic Designer'].sample,
                           description: Faker::Hipster.sentence,
                           user: the_user)
   project.save
@@ -51,7 +51,7 @@ end
 puts "Finished!"
 
 # puts "creating project"
-# proj = Project.create(name: "test", skills: "exem exma epr", description: "whatever", user: util)
+# proj = Project.create(name: "test", skill: "exem exma epr", description: "whatever", user: util)
 
 # puts "creating colab"
 # colab = Collaboration.create(user: util, project: proj)
