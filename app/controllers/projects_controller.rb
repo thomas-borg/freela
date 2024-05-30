@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show]
+  before_action :set_skills, only: [:new,]
 
   def index
     @projects = Project.all
@@ -15,12 +16,12 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @skills = ['Front-End Development', 'Back-End Development', 'Full Stack Development', 'UX/UI Design', 'Graphic Design']
   end
 
   def create
     @project = Project.new(project_params)
     @project.user = current_user
-    @project.save!
     if @project.save
       redirect_to dashboard_path
     else
@@ -36,5 +37,9 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :skill, :description, :start_date, :end_date, :user_id)
+  end
+
+  def set_skills
+    @skills = ['Front-End Development', 'Back-End Development', 'Full Stack Development', 'UX/UI Design', 'Graphic Design']
   end
 end
