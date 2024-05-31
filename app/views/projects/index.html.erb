@@ -16,10 +16,9 @@
     <% @projects.each_with_index do |project, index| %>
       <a href="/projects/<%= project.id %>" style="text-decoration: none;" class="card-product col-lg-5 m-3 flex-grow-1 rounded-5">
         <%= image_tag "https://source.unsplash.com/random/?computer&science}/#{index}", alt: "Movie icon", style: "width: 25%; height: 100%;" %>
-        <div class="card-product-infos">
-          <span class=" text-black fw-bold"><%= project.name %></span>
-          <span class="user-name"><%= project.user.email %></span>
-          <p><%= project.skill %></p>
+        <div class="card-product-infos  d-flex flex-column">
+          <span class="text-black fw-bold"><%= project.name %></span>
+          <p class="badge rounded-pill"><%= project.skill %></p>
         </div>
       </a>
     <%end %>
