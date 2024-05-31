@@ -25,6 +25,13 @@
   align-items: center;
 }
 
+.card-product p {
+  // min-width: auto;
+  // max-width: fit-content;
+  // margin-left: 16px;
+  color:#ff0346;
+  background-color: #e6e6e6;
+}
 .card-product:hover{
   transform: scale(1.05);
   will-change: transform;
