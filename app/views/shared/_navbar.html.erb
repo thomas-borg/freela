@@ -20,21 +20,35 @@
           <li class="nav-item">
             <a class="nav-link text-decoration-none" href="/projects">Browse Projects</a>
           </li>
-          </ul>
+        </ul>
           <nav class="nav-item">
             <% if user_signed_in? %>
-              <a class="nav-link " href="/dashboard"><%= image_tag("user-52.png",  :alt => "logos", :class => "logos-profile") %>
+              <a class="nav-link dropdown-toggle" href="#" aria-expanded="false" data-bs-toggle="dropdown"><%= image_tag("user-52.png",  :alt => "logos", :class => "logos-profile") %>
               </a>
             <% end %>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+            <li>
+              <% unless current_page?(new_user_session_path) %>
+                <% if user_signed_in? %>
+                    <a class="dropdown-item"> <%= link_to "Log-out", destroy_user_session_path, method: :delete, data: { turbo_method: 'delete' }, class: "dropdown-item" %> </a>
+                <% else %>
+                  <a a class="nav-link"> <%= link_to "Login", href="/users/sign_in", class: "nav-link-login" %></a>
+                <% end %>
+              <% end %>
+            </li>
+          </ul>
+
           </nav>
           <nav class="nav-item">
-            <% unless current_page?(new_user_session_path) %>
-              <% if user_signed_in? %>
-                  <a class="nav-link "> <%= link_to image_tag("logout-icon.png", :alt => "log-outs", class: 'out-button'), destroy_user_session_path, method: :delete, data: { turbo_method: 'delete' } %> </a>
-              <% else %>
+
+          <% unless current_page?(new_user_session_path) %>
+              <% unless user_signed_in? %>
                 <a a class="nav-link"> <%= link_to "Login", href="/users/sign_in", class: "nav-link-login" %>
               <% end %>
             <% end %>
+
             <% if current_page?(new_user_session_path) %>
               <a a class="nav-link text-decoration-none"> <%= link_to "Sign Up", "/users/sign_up", class: "nav-link-sign-up" %>
               </a>
