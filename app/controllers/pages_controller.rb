@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:home]
 
   def home
     @projects = Project.order(created_at: :desc).limit(3)
