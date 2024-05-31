@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :collaborations, only: [:new, :create]
   end
 
+  resources :collaborations, only: [:destroy, :update]
 
   get 'dashboard', to: 'pages#dashboard'
   get 'profile', to: 'pages#profile'

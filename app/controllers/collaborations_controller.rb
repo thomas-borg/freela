@@ -9,4 +9,19 @@ class CollaborationsController < ApplicationController
 
     redirect_to dashboard_path
   end
+
+  def update
+    @collaboration = Collaboration.find(params[:id])
+    @collaboration.accepted = true
+    @collaboration.save
+
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    @collaboration = Collaboration.find(params[:id])
+    @collaboration.destroy
+
+    redirect_to dashboard_path
+  end
 end
