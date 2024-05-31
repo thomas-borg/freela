@@ -20,18 +20,21 @@ User.destroy_all
 puts "Seeding start"
 puts "Creating users"
 20.times do
-  user = User.create!(email: Faker::Internet.email, password: Faker::Internet.password)
+  user = User.create!(first_name: Faker::Name.first_name,
+                      last_name: Faker::Name.last_name,
+                      email: Faker::Internet.email,
+                      password: "123456")
   user.save
-  puts "#{user.email} create"
+  puts "#{user.first_name} create"
 end
 
 puts "Creating projects"
 20.times do
   the_user = User.all.sample
   project = Project.create!(name: Faker::Sports::Chess.opening,
-                          skill: ['Front-End Developer', 'Back-End Developer', 'Full Stack Developer', 'UX/UI Designer', 'Graphic Designer'].sample,
-                          description: Faker::Hipster.sentence,
-                          user: the_user)
+                            skill: ['Front-End Developer', 'Back-End Developer', 'Full Stack Developer', 'UX/UI Designer', 'Graphic Designer'].sample,
+                            description: Faker::Lorem.paragraph_by_chars(number: 60) ,
+                            user: the_user)
   project.save
   puts "#{project.name} create"
 end
@@ -45,7 +48,7 @@ end
   end
   collab = Collaboration.create!(user: the_user, project: the_project)
   collab.save
-  puts "New collab create: #{the_user.email} join #{the_project.user.email} project "
+  puts "New collab create: #{the_user.first_name} JOIN #{the_project.user.first_name} project "
 end
 
 puts "Finished!"
