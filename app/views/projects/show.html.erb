@@ -4,14 +4,13 @@
       <%= image_tag "https://source.unsplash.com/random/?office/500x350/#{@project.id}", alt: "Office", class:"rounded-5", width:"500", height:"auto" %>
       <div class="mx-5">
         <h1 class="pt-3 text-dark"><strong><%= @project.name.capitalize %></strong></h1>
-        <p class="text-dark"><%= @project.user.first_name.capitalize %> <%= @project.user.last_name.capitalize %></p>
         <p class="text-dark"><%= @project.user.email %></p>
         <p class="text-dark"><%= @project.description.capitalize %></p>
         <p class="text-dark"><i><%= @project.skill %></i></p>
         <% if @project.user != current_user %>
           <div>
             <%= simple_form_for [@project, @collaboration] do |f| %>
-              <%= f.submit "Apply", class: "px-3  btn btn-secondary rounded-5" %>
+              <%= f.submit "Apply", class: "px-3 btn btn-secondary rounded-5" %>
             <% end %>
           </div>
         <% end %>
