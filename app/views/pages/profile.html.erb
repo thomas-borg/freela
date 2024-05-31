@@ -5,7 +5,7 @@
       <h1 class="proheader">Profile</h1>
         <div class="profile-images-div">
 
-            <%= image_tag "https://source.unsplash.com/random/?{user}", alt: "Profile icon", class:"profile-pic", height:"250" %>
+            <%= image_tag "https://source.unsplash.com/random/?{user}", alt: "Profile icon", class:"profile-pic", height:"350" %>
 
         </div>
     </div>
@@ -17,26 +17,23 @@
         <div class="user-informations d-flex justify-content-between">
           <div class="personal-details">
 
-              <div class="full-name">
+              <div class="full-name p-3">
                 <h3 class="first-name"><%= @user.first_name %></h3>
                 <h3><%= @user.last_name %></h3>
               </div>
-              <div class="details-title">
-              <h5>E-mail</h5>
+              <div class="p-3">
+                <h5 class="details-title">E-mail</h5>
+                <h6 class="user-mail"><%= @user.email %></h6>
               </div>
-              <div class="user-mail">
-                <h6><%= @user.email %></h6>
+              <div class="p-3">
+                <h5 class="details-title">Skills</h5>
+                <h6 class="personal-details"><%= @user.skills %></h6>
               </div>
-              <div class="details-title">
-                <h5>Skills</h5>
+              <div class="p-3">
+                <h5 class="details-title">About Me</h5>
+                <h6 class="personal-details"><%= @user.about %></h6>
               </div>
-              <div class="personal-details"><%= @user.skills %></div>
-              <div class="details-title">
-              <h5>Mora About Me</h5>
-              </div>
-              <div class="personal-details"><%= @user.about %></div>
-              <div>
-              <p><a class="btn btn-secondary align-self-baseline mx-5 align-self-end rounded-5" href="/users/edit" role="button" id="edit-btn">Edit Profile</a></p>
+              <p><a class="btn btn-secondary align-self-baseline mx-3 align-self-end rounded-5" href="/users/edit" role="button" id="edit-btn">Edit Profile</a></p>
               </div>
 
           </div>
