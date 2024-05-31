@@ -4,11 +4,13 @@
     <div class="image-n-title pb-3">
       <h1 class="proheader">Profile</h1>
         <div class="profile-images-div">
-            <%= image_tag "https://source.unsplash.com/random/?{user}", alt: "Profile icon", class:"profile-pic", height:"180" %>
+
+            <%= image_tag "https://source.unsplash.com/random/?{user}", alt: "Profile icon", class:"profile-pic", height:"250" %>
+
         </div>
     </div>
     <div class="personal-detailsss">
-    <h2 class="mineinfo">About Me</h2>
+    <h2 class="mineinfo">Personal Details</h2>
     <hr class="featurette-divider">
       <div class="container pb-3">
 
@@ -16,34 +18,26 @@
           <div class="personal-details">
 
               <div class="full-name">
-                <h3>Ahmed</h3>
-                <h3>Musa</h3>
+                <h3 class="first-name"><%= @user.first_name %></h3>
+                <h3><%= @user.last_name %></h3>
               </div>
               <div class="details-title">
               <h5>E-mail</h5>
               </div>
-
               <div class="user-mail">
-                <h5><%= @user.email %></h5>
+                <h6><%= @user.email %></h6>
               </div>
               <div class="details-title">
                 <h5>Skills</h5>
               </div>
-              <ul class="user-skills">
-                <li class="user-skill">
-                  <a>Front-End Development</a>
-                </li>
-                <li class="user-skill">
-                  <a>UX/UI Design</a>
-                </li>
-                <li class="user-skill">
-                  <a>Graphic Design</a>
-                </li>
-              </ul>
+              <div class="personal-details"><%= @user.skills %></div>
               <div class="details-title">
               <h5>Mora About Me</h5>
               </div>
-              <div class="personal-details">ajkdskhnfsçh jhfjöa sdajlk jnakçhshdj öhkmahs dhash naöbmd hasjkd hsaj ndöas dasd haös dknhmjçöh mahç mjfçhdsa hdajshdjaks hjkhjkh jkh jkhlk hjlkhaklgdjk j </div>
+              <div class="personal-details"><%= @user.about %></div>
+              <div>
+              <p><a class="btn btn-secondary align-self-baseline mx-5 align-self-end rounded-5" href="/users/edit" role="button" id="edit-btn">Edit Profile</a></p>
+              </div>
 
           </div>
 
