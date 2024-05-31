@@ -10,7 +10,11 @@ class PagesController < ApplicationController
       @user = current_user
       # @user = User.find(141) # test
       @projects = Project.where(user: @user)
-      @collaborations = Collaboration.where(user: @user)
+
+      @received_collaborations = Collaboration.joins(:project)
+                                         .where(projects: { user: @user }, accepted: false)
+
+      @collaborations = Collaboration.where(user: @user, accepted: true)
     else
       redirect_to new_user_session_path, alert: "Vous devez être connecté pour accéder à cette page."
     end

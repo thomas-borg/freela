@@ -1,5 +1,16 @@
+
 <div class="container py-3">
   <h1>Dashboard</h1>
+  <h2>Pending Projects</h2>
+  <div class="row">
+    <% @received_collaborations.each do |collab| %>
+      <%=  %>
+      <%= render "components/card_pending", collaboration: collab %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container py-3">
   <h2>My Projects</h2>
   <div class="row">
     <% @projects.each do |project| %>
