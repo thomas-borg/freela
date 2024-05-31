@@ -1,6 +1,6 @@
 <div class="large-cards col-lg-3 d-flex flex-column shadow px-0 mb-5 m-1 bg-opacity-75 rounded-5">
-  <%= image_tag "https://source.unsplash.com/random/?office/325x200/#{project.id}", alt: "Movie icon", class:"rounded-top-5", width:"100%", height:"200" %>
-  <h4 class="px-3 pt-3"><strong><%= project.name.capitalize %></strong></h4>
-  <p class="skill-badge badge rounded-pill text-bg-secondary"><%= project.skill.capitalize %></p>
-  <p><a class="btn btn-secondary align-self-baseline mx-3 align-self-end rounded-5" href="/projects/<%= project.id %>" role="button" id="fbtn">View details »</a></p>
-</div>
+    <%= image_tag "https://source.unsplash.com/random/?office/325x200/#{project.id}", alt: "Movie icon", class:"rounded-top-5", width:"100%", height:"200" %>
+    <h4 class="px-3 pt-3"><strong><%= project.name.capitalize %></strong></h4>
+    <p class="skill-badge badge rounded-pill"><%= project.skill.capitalize %></p>
+    <p><a class="btn btn-secondary align-self-baseline mx-3 align-self-end rounded-5" href="/projects/<%= project.id %>" role="button" id="fbtn">View details »</a></p>
+  </div>
