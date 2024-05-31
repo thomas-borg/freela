@@ -1,15 +1,15 @@
-.large-cards {
-
-  p {
-    content: '';
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.large-cards:hover {
+  transform: scale(1.05);
+  will-change: transform;
+  transition: box-shadow .3s;
+  box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
+  margin: 0;
 }
 
 .skill-badge {
   min-width: auto;
   max-width: fit-content;
   margin-left: 16px;
+  color:#EB3565;
+  background-color: #e6e6e6;
 }

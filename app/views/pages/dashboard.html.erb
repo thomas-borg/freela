@@ -8,10 +8,11 @@
   </div>
 </div>
 
-  <h2>----Collaboration</h2>
-  <% @collaborations.each do |collab| %>
-    <h4> <%= collab.project.name %> </h4>
-    <h3> <%= collab.project.description %> </h3>
-    <h3> <%= collab.project.skill %> </h3>
-  <% end %>
+<div class="container py-3">
+  <h2>My Collaborations</h2>
+  <div class="row">
+    <% @collaborations.each do |collab| %>
+      <%= render "components/collab_card", collaboration: collab %>
+    <% end %>
+  </div>
 </div>
