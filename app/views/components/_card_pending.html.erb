@@ -1,0 +1,9 @@
+<div class="pending-large-cards col-lg-3 d-flex flex-column shadow px-0 mb-5 m-1 bg-opacity-75 rounded-5">
+  <%= image_tag "https://source.unsplash.com/random/?office/325x200/#{collaboration.id}", alt: "Movie icon", class:"rounded-top-5", width:"100%", height:"200" %>
+  <h4 class="px-3 pt-3"><strong><%= collaboration.project.name.capitalize %></strong></h4>
+  <p class="skill-badge badge rounded-pill"><%= collaboration.project.skill.capitalize %></p>
+  <div class="d-flex justify-content-center mb-3">
+    <%= render "components/form_accept", collaboration: collaboration %>
+    <%= link_to 'Decline »', collaboration_path(collaboration), data: { "turbo-method": :delete } , class: "btn btn-danger align-self-baseline mx-3 align-self-end rounded-5"%>
+  </div>
+</div>
