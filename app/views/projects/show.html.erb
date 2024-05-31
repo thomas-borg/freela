@@ -1,22 +1,21 @@
-<div class="container pt-3">
-  <div class="card-body">
-    <!-- <img src="..." class="card-img-top" alt="..."> -->
-    <h2><%= @project.name %></h2>
-    <h5 class="card-title"><%= @project.user.email %></h5>
-    <p class="card-text"><%= @project.description %></p>
-    <p class="card-text"><%= @project.skill %></p>
-    <!-- <a href="#" class="btn btn-primary">Sign Up</a>-->
-  </div>
-
-  <% if @project.user != current_user %>
-    <div>
-      <%= simple_form_for [@project, @collaboration] do |f| %>
-        <%= f.submit "Book", class: "btn btn-primary" %>
-      <% end %>
+<div class="banner" style="background-color: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url();">
+  <div class="container px-3">
+    <div class="d-flex justify-content-center">
+      <%= image_tag "https://source.unsplash.com/random/?office/500x350/#{@project.id}", alt: "Office", class:"rounded-5", width:"500", height:"auto" %>
+      <div class="mx-5">
+        <h1 class="pt-3 text-dark"><strong><%= @project.name.capitalize %></strong></h1>
+        <p class="text-dark"><%= @project.user.first_name.capitalize %> <%= @project.user.last_name.capitalize %></p>
+        <p class="text-dark"><%= @project.user.email %></p>
+        <p class="text-dark"><%= @project.description.capitalize %></p>
+        <p class="text-dark"><i><%= @project.skill %></i></p>
+        <% if @project.user != current_user %>
+          <div>
+            <%= simple_form_for [@project, @collaboration] do |f| %>
+              <%= f.submit "Apply", class: "px-3  btn btn-secondary rounded-5" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-  <!--
-  1. Need to convert skill to an array in project model
-  2. Implement an iterator to add skill to a skill div
-  -->
-<div>
+  </div>
+</div>
