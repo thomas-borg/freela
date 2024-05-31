@@ -16,7 +16,7 @@
 .profile-images-div {
   display: flex;
   justify-content: center;
-  align-content: center;
+  text-align: center;
 }
 
 .proheader {
@@ -61,10 +61,20 @@
   border-radius: 30px;
   width: 70%;
   object-fit: cover;
+  object-position: 70% 30%;
   box-shadow: 1px 1px 3px black;
+  margin-top: 40px;
 }
 
 .details-title {
   color:  #EB3565;
   margin-left: 30px;
+}
+
+.user-skills {
+  padding-left: 0px;
+}
+
+.first-name {
+  margin-right: 12px;
 }
