@@ -1,0 +1,9 @@
+<div class="container py-4">
+  <h2 class="mb-2"> Edit <%= @project.name.capitalize %> </h2>
+  <%= simple_form_for(@project) do |f| %>
+    <%= f.input :name , input_html: { style: 'margin-bottom: 30px;' } %>
+    <%= f.input :description, input_html: { style: 'margin-bottom: 30px;' } %>
+    <%= f.input :skill, collection: @skills, label: "I'm looking for a..", prompt: 'Choose one', input_html: { style: 'margin-bottom: 30px;' } %>
+    <%= f.submit class: "btn"%>
+  <% end %>
+</div>
