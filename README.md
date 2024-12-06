@@ -6,4 +6,4 @@ There are many developers out there, looking into getting their tech career star
 
 Post your project idea and your goals in our website so that developers can browse through the options and choose to collaborate with the project they identify the most with.
 
-Is it a match? Then lets get to to work!
+Is it a match? Then lets get to work!
